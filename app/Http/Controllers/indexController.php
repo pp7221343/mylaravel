@@ -11,6 +11,14 @@ use App\model\Admin;
 class indexController extends Controller
 {
     public function getlogin(Request $request){
+        $partten = "/([1-9]\[[a-z]{1,}\])/";
+        $base_str = 'abc3[a]5[qw]';
+        $content = "";
+        $new_str = "";
+        $int_key = 0;
+        preg_match($partten,$base_str,$content);
+        dd($content);
+        
 
         return view('welcome');
     }

@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login','indexController@getlogin');
+Route::get('postlogin','indexController@postlogin');
+
+
+
+Route::get('/adminv','Admin\loginController@getlogin');
+Route::post('/verify_admin_login','Admin\loginController@postlogin');
+

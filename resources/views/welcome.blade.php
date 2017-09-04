@@ -1,95 +1,56 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+    <div class="wel-title">laravel</div>
+    <div class="wel-nav">
+        <div class="wel-menu">
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
         </div>
-    </body>
-</html>
+        {{--<ul>--}}
+            {{--<li></li>--}}
+            {{--<li></li>--}}
+            {{--<li></li>--}}
+            {{--<li></li>di--}}
+            {{--<li></li>--}}
+        {{--</ul>--}}
+    </div>
+    <div class="wel-login">
+        <form action="">
+            <div class="col-lg-6">
+                <label for="account">account:</label>
+                <input type="text" name="account">
+            </div>
+            <div class="col-lg-6">
+                <label for="password">password:</label>
+                <input type="text" name="password" id="password" >
+            </div>
+            <div style="text-align: center;margin-top: 20px;">
+                <button type="submit">login</button>
+            </div>
+        </form>
+        <div id="app">
+            @{{ message }}
+        </div>
+    </div>
+
+    <script>
+        var account = new Vue({
+            el:'#app',
+            data:{
+                message:'hello world'
+            }
+        })
+    </script>
+    @stop
+
+@section('css')
+    <style>
+        .wel-title{width:100%;height:150px;font-size: 80px;text-align: center;padding-top:30px;}
+        .wel-nav{width:100%;height:30px;background-color: #2a88bd}
+        .wel-menu{height:30px;width:1200px;margin:0 auto;background-color: red;}
+        .wel-login{width:500px;height:500px;margin:0 auto;background-color: #8c8c8c}
+    </style>
+    @stop
