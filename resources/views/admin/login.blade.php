@@ -6,7 +6,7 @@
 @section('content')
 
     <div class="login">
-        <h2>Acced Form</h2>
+        <h2>My world</h2>
         <div class="login-top">
             <h1>LOGIN FORM</h1>
             <form method="post" action="/verify_admin_login">
@@ -23,5 +23,14 @@
         <div class="login-bottom">
             <h3>New User &nbsp;<a href="#">Register</a>&nbsp Here</h3>
         </div>
+        @if(count($errors)>0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
     </div>
     @stop
