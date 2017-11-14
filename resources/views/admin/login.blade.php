@@ -32,5 +32,32 @@
                 </ul>
             </div>
             @endif
+        @if(isset($log))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>@{{ $log }}</li>
+                </ul>
+            </div>
+            @endif
     </div>
+
+    @stop
+
+@section('js')
+
+    <script type="text/javascript">
+//        document.onkeydown = keydown;
+//        var data ;
+//        function keydown(e){
+//            if(e.which != 13){
+//                data = data+String.fromCharCode(e.which);
+//            } else {
+//                alert(data);
+//                data = "";
+//            }
+//        }
+
+    </script>
+
+
     @stop

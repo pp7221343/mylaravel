@@ -23,5 +23,5 @@ Route::get('postlogin','indexController@postlogin');
 Route::get('/adminv','Admin\loginController@getlogin');
 Route::post('/verify_admin_login','Admin\loginController@postlogin');
 //后台首页
-Route::get('home','HomeController@home');
+Route::get('home','Admin\HomeController@home');
 
